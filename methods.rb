@@ -15,7 +15,7 @@ def choose_plan(plans)
   plans[select_plan_num - 1]
 end
 
-def decide_plan(chosen_plan)
+def decide_count_of_people(chosen_plan)
   puts "#{chosen_plan[:place]}旅行ですね。"
   puts "何名で予約されますか？"
   while true do 
@@ -27,10 +27,10 @@ def decide_plan(chosen_plan)
   count_of_people
 end
 
-def calulate_total_charges(chosen_plan, decide_count)
-  puts "#{decide_count}名ですね。"
-  total_charges = chosen_plan[:price] * decide_count
-  if decide_count >= 5
+def calulate_total_charges(chosen_plan, count_of_people)
+  puts "#{count_of_people}名ですね。"
+  total_charges = chosen_plan[:price] * count_of_people
+  if count_of_people >= 5
     puts "5名以上なので10%割引となります。"
     total_charges *= 0.9
   end
